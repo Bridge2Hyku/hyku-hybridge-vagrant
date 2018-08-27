@@ -1,5 +1,5 @@
-# Hyku with CdmMigrator Vagrant Box
-[Hyku](https://github.com/samvera-labs/hyku) using the [CdmMigrator](https://github.com/UVicLibrary/cdm_migrator) tool.
+# Hyku with HyBridge Vagrant Box
+[Hyku](https://github.com/samvera-labs/hyku) using the Hybridge tool.
 
 ## Requirements
 
