@@ -1,5 +1,5 @@
 # Hyku with HyBridge Vagrant Box
-[Hyku](https://github.com/samvera-labs/hyku) using the Hybridge tool.
+[Hyku](https://github.com/samvera-labs/hyku) using the HyBridge tool.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ Windows users will need Powershell version 3 or higher
 
 ## Install
 
-1. `git clone https://github.com/Bridge2Hyku/hyku-vagrant.git`
+1. `git clone https://github.com/seanlw/hyku-hybridge.git`
 2. `cd hyku-vagrant`
 3. `vagrant up`
 4. Visit [http://localhost:8080](http://localhost:8080)
@@ -20,7 +20,7 @@ Windows users will need Powershell version 3 or higher
 1. Visit [http://localhost:8080/users/sign_up](http://localhost:8080/users/sign_up) in your browser
 2. Create a new account
 3. Open a new terminal
-4. `cd hyku-hybridge`, or wherever you cloned hyku-vagrant
+4. `cd hyku-hybridge`, or wherever you cloned hyku-hybridge
 5. `vagrant ssh`
 6. `cd /var/www/hyku`
 7. `bundle exec rake hyku:superadmin:grant[user@email.org]` where `user@email.org` is the email you registered
