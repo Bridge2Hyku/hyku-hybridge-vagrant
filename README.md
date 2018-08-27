@@ -11,7 +11,7 @@ Windows users will need Powershell version 3 or higher
 ## Install
 
 1. `git clone https://github.com/seanlw/hyku-hybridge.git`
-2. `cd hyku-vagrant`
+2. `cd hyku-hybridge`
 3. `vagrant up`
 4. Visit [http://localhost:8080](http://localhost:8080)
 
