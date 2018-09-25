@@ -1,3 +1,4 @@
 * text=auto
-*.* text eol=lf
+*.sh text eol=lf
+*.gz binary
 install_scripts/config text eol=lf
