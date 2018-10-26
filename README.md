@@ -1,17 +1,24 @@
 # Hyku with HyBridge Vagrant Box
-[Hyku](https://github.com/samvera-labs/hyku) using the HyBridge tool.
+[Hyku](https://github.com/samvera-labs/hyku) using the [HyBridge](https://github.com/Bridge2Hyku/hybridge) tool.
 
 ## Requirements
 
 * [Vagrant 2.1.x](https://www.vagrantup.com/)
 * [VirtualBox 5.2.x](https://www.virtualbox.org/)
+* [Chrome](https://www.google.com/chrome/)
+* CPU: Core i5/Ryzen 5 or higher
+* RAM: 8GB or higher
 
 Windows users will need Powershell version 3 or higher
 
+The Chrome browser is required because of its support for subdomains on localhost `*.localhost` which Hyku Vagrant uses for repositories. Alternatively you can edit your `hosts` file and add  `127.0.0.1` to any `*.localhost` domain.
+
+*Please note that the Hyrax stack can be resource-intensive and is not recommended for underpowered computers or on machines you intend to multi-task heavily with during your hyku testing.* 
+
 ## Install
 
-1. `git clone https://github.com/seanlw/hyku-hybridge.git`
-2. `cd hyku-hybridge`
+1. `git clone https://github.com/Bridge2Hyku/hyku-hybridge-vagrant.git`
+2. `cd hyku-hybridge-vagrant`
 3. `vagrant up`
 4. Visit [http://localhost:8080](http://localhost:8080)
 
@@ -20,7 +27,7 @@ Windows users will need Powershell version 3 or higher
 1. Visit [http://localhost:8080/users/sign_up](http://localhost:8080/users/sign_up) in your browser
 2. Create a new account
 3. Open a new terminal
-4. `cd hyku-hybridge`, or wherever you cloned hyku-hybridge
+4. `cd hyku-hybridge-vagrant`, or wherever you cloned hyku-hybridge-vagrant
 5. `vagrant ssh`
 6. `cd /var/www/hyku`
 7. `bundle exec rake hyku:superadmin:grant[user@email.org]` where `user@email.org` is the email you registered
@@ -32,7 +39,7 @@ Windows users will need Powershell version 3 or higher
 2. Click "Get Started"
 3. Enter `example` for the "Short name"
 4. Register for the new repository admin account
-5. Create a folder `example.localhost` in `hyku-hybridge/data_store`
+5. Create a folder `example.localhost` in `hyku-hybridge-vagrant/data_store`
 6. Your new repository will be at [http://example.localhost:8080](http://example.localhost:8080)
 
 ## Stopping vagrant
@@ -43,12 +50,13 @@ To stop vagrant run `vagrant halt`. To remove hyku vagrant and the virtual machi
 
 * Ubuntu 16.04 64-bit machine with:
   * [Apache](https://httpd.apache.org/)
+  * [HyBridge](https://github.com/Bridge2Hyku/hybridge)
   * [Fedora 4.x](http://fedora.info/about) at [http://localhost:8984/fedora4/rest](http://localhost:8984/fedora4/rest)
   * [Hyku](https://github.com/samvera-labs/hyku) at
   [http://localhost:8080](http://localhost:8080)
-  * [ImageMagick 6.9.10-10](https://www.imagemagick.org/script/index.php)
+  * [ImageMagick](https://www.imagemagick.org/script/index.php)
   * [Passenger 5.1.4](https://www.phusionpassenger.com/)
-  * [Ruby 2.3.1](https://www.ruby-lang.org/)
+  * [Ruby 2.4.4](https://www.ruby-lang.org/)
   * [Solr 6.4.2](http://lucene.apache.org/solr/) at [http://localhost:8983/solr/](http://localhost:8983/solr/)
   * [Tomcat 7](http://tomcat.apache.org)
   * [Zookeeper](https://zookeeper.apache.org/)
@@ -57,7 +65,7 @@ To stop vagrant run `vagrant halt`. To remove hyku vagrant and the virtual machi
 
 If you need to view the status of jobs follow these steps to enable the Sidekiq interface:
 
-1. `cd hyku-hybridge`, or wherever your hyku-vagrant is
+1. `cd hyku-hybridge-vagrant`, or wherever your hyku-vagrant is
 2. `vagrant ssh`
 3. `nano /var/www/hyku/config/routes.rb`
 4. Add the following lines to Line #2
@@ -82,7 +90,3 @@ Rails.application.routes.draw do
 Current maintainers:
 
 * [Sean Watkins](https://github.com/seanlw)
-
-## Contributors
-
-Coming Soon...
